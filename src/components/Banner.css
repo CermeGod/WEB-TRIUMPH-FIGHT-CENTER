@@ -1,7 +1,12 @@
 .infinite-banner {
     width: 100%;
-    height: 100px;
+    height: 90px;
     background-color: var(--primary);
+    background-image: repeating-linear-gradient(135deg,
+            rgba(0, 0, 0, 0.18) 0px,
+            rgba(0, 0, 0, 0.18) 18px,
+            transparent 18px,
+            transparent 36px);
     color: #ffffff;
     display: flex;
     align-items: center;
@@ -9,28 +14,41 @@
     white-space: nowrap;
     position: relative;
     z-index: 10;
+    border-top: 2px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
 }
 
 .banner-content {
     display: flex;
     white-space: nowrap;
-    font-family: var(--font-heading);
-    font-size: 32px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 2px;
     min-width: 100%;
+}
+
+.banner-group {
+    display: flex;
+}
+
+.banner-word {
+    display: inline-flex;
+    align-items: center;
+    gap: 22px;
+    margin-right: 22px;
+    font-family: var(--font-display);
+    font-size: 34px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.banner-icon {
+    opacity: 0.85;
+    transform: rotate(15deg);
 }
 
 .banner-track {
     display: flex;
     width: max-content;
-    animation: scrollBanner 25s linear infinite;
-}
-
-.banner-content span {
-    margin-right: 40px;
-    /* Space between words */
+    animation: scrollBanner 28s linear infinite;
 }
 
 @keyframes scrollBanner {
@@ -45,11 +63,17 @@
 
 @media (max-width: 768px) {
     .infinite-banner {
-        height: 60px;
+        height: 56px;
     }
 
-    .banner-content {
+    .banner-word {
         font-size: 20px;
-        gap: 20px;
+        gap: 14px;
+        margin-right: 14px;
+    }
+
+    .banner-icon {
+        width: 16px;
+        height: 16px;
     }
 }

@@ -1,102 +1,80 @@
 import './Header.css';
 import { useState, useEffect } from 'react';
-import { Settings, Moon, Sun, Monitor, EyeOff } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import logo from '../assets/Superlogo.webp';
-import logoUnico from '../assets/Logo-Unico-header-footer-favicon.webp';
-import faviconImg from '../assets/favicon.webp';
+
+const LINKS = [
+    { href: '#clase', label: 'Clases' },
+    { href: '#gloria', label: 'Campeones' },
+    { href: '#eventos', label: 'Eventos' },
+    { href: '#coach', label: 'Coach' },
+];
 
 const Header = () => {
-    const [settingsOpen, setSettingsOpen] = useState(false);
-    const [theme, setTheme] = useState('dark');
-    const [isHidden, setIsHidden] = useState(false);
+    const [open, setOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
-    // Efecto para aplicar modo claro/oscuro en tiempo real al HTML body
     useEffect(() => {
-        document.body.classList.remove('light-mode', 'dim-mode', 'unico-mode');
-        const favicon = document.querySelector('link[rel="icon"]');
+        const onScroll = () => setScrolled(window.scrollY > 24);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
 
-        if (theme === 'light') {
-            document.body.classList.add('light-mode');
-            if (favicon) favicon.href = faviconImg;
-        } else if (theme === 'dim') {
-            document.body.classList.add('dim-mode');
-            if (favicon) favicon.href = faviconImg;
-        } else if (theme === 'unico') {
-            document.body.classList.add('unico-mode');
-            if (favicon) favicon.href = logoUnico;
-        } else {
-            if (favicon) favicon.href = faviconImg;
-        }
-    }, [theme]);
+    // Bloquear scroll del body cuando el menú móvil está abierto
+    useEffect(() => {
+        document.body.style.overflow = open ? 'hidden' : '';
+        return () => { document.body.style.overflow = ''; };
+    }, [open]);
 
     return (
-        <header className={`header ${theme === 'light' ? 'light-header' : 'dark-header'}`}>
+        <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
             <div className="container header-inner">
-                {/* 1. Izquierda: Logo */}
-                <a href="/" className="logo-placeholder">
-                    <img src={logo} alt="Triumph Fight Center Logo" className="logo-img default-only" width="200" height="70" loading="eager" fetchPriority="high" />
-                    <img src={logoUnico} alt="Triumph Unico Logo" className="logo-img unico-only" width="150" height="60" loading="lazy" />
+                <a href="/" className="header-logo" aria-label="Triumph Fight Center - inicio">
+                    <img src={logo} alt="Triumph Fight Center" width="180" height="60" loading="eager" fetchPriority="high" />
                 </a>
 
-                <nav className="nav">
-                    <ul className="nav-list">
-                        <li><a href="#clase">Primera Clase</a></li>
-                        <li><a href="#gloria">Sala de Trofeos</a></li>
-                        <li><a href="#planes">Nuestros Planes</a></li>
-                        <li><a href="#eventos">Eventos</a></li>
-                    </ul>
+                <nav className="nav-desktop" aria-label="Principal">
+                    {LINKS.map((l) => (
+                        <a key={l.href} href={l.href}>{l.label}</a>
+                    ))}
                 </nav>
 
-                <div className="header-actions">
-                    <div className="settings-menu">
-                        <button
-                            className="settings-btn"
-                            onClick={() => setSettingsOpen(!settingsOpen)}
-                            aria-label="Configuración"
-                        >
-                            <Settings size={22} className="settings-icon" />
-                        </button>
-
-                        {settingsOpen && (
-                            <div className="settings-dropdown">
-                                <div className="dropdown-item">
-                                    <div className="item-label">
-                                        {theme === 'dark' ? <Moon size={16} /> : theme === 'light' ? <Sun size={16} /> : <Monitor size={16} />}
-                                        <span>Tema Visual</span>
-                                    </div>
-                                    <select
-                                        className="language-select"
-                                        value={theme}
-                                        onChange={(e) => setTheme(e.target.value)}
-                                    >
-                                        <option value="dark">Nocturno</option>
-                                        <option value="dim">Gris Combate</option>
-                                        <option value="light">Día</option>
-                                        <option value="unico">Único</option>
-                                    </select>
-                                </div>
-                                <div className="dropdown-divider"></div>
-                                <div className="dropdown-item clickable-hide" onClick={() => { setIsHidden(true); setSettingsOpen(false); }} style={{ cursor: 'pointer', display: 'flex', justifyContent: 'center' }}>
-                                    <div className="item-label" style={{ color: '#ff4757' }}>
-                                        <EyeOff size={16} />
-                                        <span>Ocultar Menú</span>
-                                    </div>
-                                </div>
-                            </div>
-                        )}
-                    </div>
+                <div className="header-cta">
+                    <a href="https://wa.me/51900966701" target="_blank" rel="noopener noreferrer" className="btn-primary">
+                        Clase gratis
+                    </a>
                 </div>
+
+                <button
+                    className="nav-toggle"
+                    onClick={() => setOpen(true)}
+                    aria-label="Abrir menú"
+                    aria-expanded={open}
+                >
+                    <Menu size={26} />
+                </button>
             </div>
 
-            {/* Float Config Button when Header is Hidden */}
-            <div className={`floating-restore-btn ${isHidden ? 'visible' : ''}`}>
-                <button
-                    className="settings-btn shadow-strong"
-                    onClick={() => setIsHidden(false)}
-                    aria-label="Mostrar Menú"
-                >
-                    <Settings size={22} className="settings-icon" />
+            {/* Menú móvil */}
+            <div className={`nav-mobile ${open ? 'nav-mobile--open' : ''}`} role="dialog" aria-modal="true" aria-hidden={!open}>
+                <button className="nav-close" onClick={() => setOpen(false)} aria-label="Cerrar menú">
+                    <X size={30} />
                 </button>
+                <nav className="nav-mobile-links" aria-label="Móvil">
+                    {LINKS.map((l) => (
+                        <a key={l.href} href={l.href} onClick={() => setOpen(false)}>{l.label}</a>
+                    ))}
+                </nav>
+                <a
+                    href="https://wa.me/51900966701"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary nav-mobile-cta"
+                    onClick={() => setOpen(false)}
+                >
+                    Primera clase gratis
+                </a>
             </div>
         </header>
     );

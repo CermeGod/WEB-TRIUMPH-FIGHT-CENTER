@@ -29,6 +29,7 @@ const Plans = () => {
         <section id="planes" className="plans-section">
             <div className="container">
                 <div className="section-header plans-header">
+                    <span className="section-badge">Membresías</span>
                     <h2>Promociones Mensuales</h2>
                     <p>Sé constante, disciplinado y puntual en tu renovación y goza siempre de los beneficios y precios especiales de TRIUMPH.</p>
                 </div>
