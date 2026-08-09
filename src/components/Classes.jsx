@@ -4,6 +4,7 @@ import teenImage from '../assets/kickboxing-teen-servicio-carrusel.webp';
 import tkdImage from '../assets/taekwondo.webp';
 import muayThaiImg from '../assets/Muay thai .webp';
 import boxeoImg from '../assets/guantes-tirumph.boxeo.webp';
+import kickImg from '../assets/imagen-principal-hero.webp';
 import { useState, useRef } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
@@ -38,7 +39,6 @@ const Classes = () => {
         <section id="clase" className="section section--light classes-section">
             <div className="container">
                 <div className="section-head">
-                    <span className="kicker">Entrena como campeón</span>
                     <h2>Nuestras disciplinas</h2>
                     <p>Programas para forjar mente y cuerpo. No importa si eres principiante absoluto o competidor avanzado: aquí tienes tu lugar.</p>
                 </div>
@@ -71,7 +71,7 @@ const Classes = () => {
                     <article className="class-card">
                         <span className="class-number">03</span>
                         <div className="class-img-wrapper">
-                            <img src={teenImage} alt="Sesión de Kickboxing funcional en Triumph Fight Center" width="600" height="400" loading="lazy" />
+                            <img src={kickImg} alt="Competidor de Triumph Fight Center en un evento de kickboxing" width="600" height="400" loading="lazy" />
                         </div>
                         <div className="class-info">
                             <h3>Kickboxing</h3>
@@ -82,7 +82,6 @@ const Classes = () => {
                 </div>
 
                 <div className="section-head center eventual-header">
-                    <span className="kicker">Para toda la familia</span>
                     <h2>Cursos eventuales</h2>
                     <p>Programas especiales para los más jóvenes y el público en general.</p>
                 </div>

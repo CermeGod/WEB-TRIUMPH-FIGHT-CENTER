@@ -27,7 +27,7 @@
 
 .class-card:hover {
     transform: translateY(-8px);
-    border-color: var(--blood);
+    border-color: var(--brand);
     box-shadow: 0 30px 60px -30px var(--shadow-color);
 }
 
@@ -102,14 +102,14 @@
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 1.4px;
-    color: var(--blood);
+    color: var(--brand);
     padding-bottom: 3px;
     border-bottom: 2px solid transparent;
     transition: border-color 0.25s ease, gap 0.25s ease;
 }
 
 .class-link:hover {
-    border-color: var(--blood);
+    border-color: var(--brand);
     gap: 12px;
 }
 

@@ -1,31 +1,31 @@
 /* ============================================================
-   TRIUMPH FIGHT CENTER — Sistema de diseño (rediseño total)
-   Tema único editorial "fight poster": tinta casi negra + hueso
-   cálido, rojo sangre punzante, oro usado con cuentagotas.
-   El ritmo lo dan secciones que alternan oscuro / claro.
+   TRIUMPH FIGHT CENTER — Sistema de diseño
+   Identidad real de la marca: cyan eléctrico + negro + blanco
+   (tomada del logo). El ritmo lo dan secciones que alternan
+   oscuro / claro frío.
    ============================================================ */
 
 :root {
-    /* --- PALETA --- */
-    --ink: #0a0a0c;
-    /* fondo base (oscuro) */
-    --ink-2: #101014;
+    /* --- PALETA (identidad real: cyan eléctrico + negro + blanco) --- */
+    --ink: #0a0d10;
+    /* fondo base (oscuro, frío) */
+    --ink-2: #10151a;
     /* superficie elevada */
-    --ink-3: #17171d;
-    --bone: #f1ece3;
-    /* fondo secciones claras */
-    --bone-2: #e6dfd1;
-    --blood: #e4080a;
-    /* rojo primario */
-    --blood-deep: #a80608;
-    --gold: #e8b23a;
+    --ink-3: #172029;
+    --paper: #eef2f6;
+    /* fondo secciones claras (gris frío) */
+    --paper-2: #dde5ec;
+    --brand: #29a8e0;
+    /* cyan de marca (del rayo del logo) */
+    --brand-deep: #1c82b4;
+    --brand-soft: #7fcbec;
 
-    --fog: #edeae4;
+    --fog: #eef2f6;
     /* texto sobre oscuro */
-    --fog-muted: #9a968d;
-    --coal: #14130f;
-    /* texto sobre hueso */
-    --coal-muted: #56524a;
+    --fog-muted: #93a1ad;
+    --coal: #0c1116;
+    /* texto sobre claro */
+    --coal-muted: #4c5763;
 
     /* --- VARIABLES DE SECCIÓN (reasignables por .section--light) --- */
     --bg-color: var(--ink);
@@ -37,8 +37,8 @@
     --border-color: rgba(255, 255, 255, 0.09);
     --line-strong: rgba(255, 255, 255, 0.16);
     --shadow-color: rgba(0, 0, 0, 0.55);
-    --primary: var(--blood);
-    --accent: var(--gold);
+    --primary: var(--brand);
+    --accent: var(--brand);
 
     /* --- RADIOS / LAYOUT --- */
     --radius-btn: 4px;
@@ -70,15 +70,17 @@
 /* Secciones claras: invierten las variables de color localmente,
    así los componentes que usan --text-main / --card-bg funcionan igual. */
 .section--light {
-    --bg-color: var(--bone);
-    --bg-secondary: var(--bone-2);
+    --bg-color: var(--paper);
+    --bg-secondary: var(--paper-2);
     --text-main: var(--coal);
     --text-muted: var(--coal-muted);
-    --heading-color: #0c0b08;
+    --heading-color: #0a0f14;
     --card-bg: #ffffff;
-    --border-color: rgba(20, 19, 15, 0.12);
-    --line-strong: rgba(20, 19, 15, 0.2);
-    --shadow-color: rgba(30, 20, 10, 0.14);
+    /* cyan más profundo en claro para contraste accesible de texto/acentos */
+    --brand: #147aa6;
+    --border-color: rgba(12, 17, 22, 0.12);
+    --line-strong: rgba(12, 17, 22, 0.2);
+    --shadow-color: rgba(12, 30, 45, 0.16);
     color: var(--text-main);
     background-color: var(--bg-color);
 }
@@ -219,16 +221,16 @@ strong {
 }
 
 .btn-primary {
-    background-color: var(--blood);
-    color: #fff;
-    box-shadow: 0 8px 24px -8px rgba(228, 8, 10, 0.7);
+    background-color: var(--brand);
+    color: #04202e;
+    box-shadow: 0 8px 24px -8px rgba(41, 168, 224, 0.65);
     clip-path: polygon(9px 0, 100% 0, calc(100% - 9px) 100%, 0 100%);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
     background-color: #fff;
-    color: var(--blood);
+    color: #06222f;
 }
 
 .btn-outline {
@@ -262,7 +264,7 @@ strong {
     content: '';
     width: 34px;
     height: 3px;
-    background: var(--blood);
+    background: var(--brand);
     flex-shrink: 0;
 }
 
@@ -355,7 +357,7 @@ strong {
     top: 8px;
     width: 8px;
     height: 8px;
-    background: var(--blood);
+    background: var(--brand);
     transform: rotate(45deg);
 }
 
@@ -372,7 +374,7 @@ strong {
     color: var(--text-main);
     line-height: 1.45;
     padding-left: 20px;
-    border-left: 3px solid var(--blood);
+    border-left: 3px solid var(--brand);
     margin-bottom: 26px;
 }
 

@@ -61,7 +61,7 @@
     right: 16px;
     bottom: 2px;
     height: 2px;
-    background: var(--blood);
+    background: var(--brand);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -141,7 +141,7 @@
 
 .nav-mobile-links a:hover,
 .nav-mobile-links a:active {
-    color: var(--blood);
+    color: var(--brand);
 }
 
 .nav-mobile-cta {

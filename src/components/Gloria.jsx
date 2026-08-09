@@ -12,7 +12,6 @@ const Gloria = () => {
             <span className="ghost-text gloria-ghost" aria-hidden="true">GLORIA</span>
             <div className="container">
                 <div className="section-head center trophy-header">
-                    <span className="kicker">Nuestra gloria</span>
                     <h2>Sala de campeones</h2>
                     <p className="trophy-subtitle">
                         El tatami donde se forjan guerreros. Estos son nuestros logros y la sangre derramada por la victoria en el circuito nacional.

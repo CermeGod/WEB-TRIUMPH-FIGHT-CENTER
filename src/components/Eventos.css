@@ -49,7 +49,7 @@
 .event-item:hover {
     transform: translateY(-8px);
     box-shadow: 0 34px 64px -30px var(--shadow-color);
-    border-color: var(--blood);
+    border-color: var(--brand);
 }
 
 .event-img {
@@ -82,7 +82,7 @@
 
 .ticket-category {
     align-self: center;
-    color: var(--blood);
+    color: var(--brand);
     font-family: var(--font-heading);
     font-size: 12px;
     font-weight: 700;

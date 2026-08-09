@@ -41,7 +41,6 @@ const Eventos = () => {
             <span className="ghost-text events-ghost-text" aria-hidden="true">FIGHT NIGHT</span>
             <div className="container">
                 <div className="section-head center">
-                    <span className="kicker">Próximos eventos</span>
                     <h2>Nuestros guerreros en acción</h2>
                     <p>Apoya a nuestra sangre en los próximos eventos nacionales e internacionales.</p>
                 </div>
@@ -141,7 +140,6 @@ const Eventos = () => {
                 </div>
 
                 <div className="section-head center events-community">
-                    <span className="kicker">Comunidad</span>
                     <h2>Eventos de nuestra familia</h2>
                     <p>En Triumph también somos familia. Únete a nuestras actividades fuera del ring.</p>
                 </div>

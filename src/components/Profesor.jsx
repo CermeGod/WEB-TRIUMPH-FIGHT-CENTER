@@ -24,8 +24,8 @@ const Profesor = () => {
                         />
                     </div>
                     <div className="profesor-text-side">
-                        <span className="kicker">Director &amp; Head Coach</span>
                         <h2>Joel Álvarez</h2>
+                        <p className="profesor-role">Director &amp; Head Coach</p>
                         <ul className="profesor-skills">
                             <li><strong>Especialización:</strong> Muay Thai - KickBoxing - Box y Preparación Física</li>
                             <li><strong>Exp:</strong> 15 años</li>
