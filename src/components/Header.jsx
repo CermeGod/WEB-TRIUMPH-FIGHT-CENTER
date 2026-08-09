@@ -31,7 +31,7 @@ const Header = () => {
         <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
             <div className="container header-inner">
                 <a href="/" className="header-logo" aria-label="Triumph Fight Center - inicio">
-                    <img src={logo} alt="Triumph Fight Center" width="180" height="60" loading="eager" fetchPriority="high" />
+                    <img src={logo} alt="Triumph Fight Center" width="180" height="60" loading="eager" fetchpriority="high" />
                 </a>
 
                 <nav className="nav-desktop" aria-label="Principal">

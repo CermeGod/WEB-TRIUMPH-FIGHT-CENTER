@@ -6,7 +6,7 @@ import fotoGrupal from '../assets/foto-grupal-3.webp';
 const Hero = () => {
     return (
         <section className="hero">
-            <img src={heroBanner} alt="" aria-hidden="true" className="hero-bg" loading="eager" decoding="async" fetchPriority="high" />
+            <img src={heroBanner} alt="" aria-hidden="true" className="hero-bg" loading="eager" decoding="async" fetchpriority="high" />
             <div className="hero-scrim" aria-hidden="true"></div>
             <span className="ghost-text hero-ghost" aria-hidden="true">TRIUMPH</span>
 
@@ -70,7 +70,7 @@ const Hero = () => {
 
                 <div className="hero-visual">
                     <div className="hero-frame">
-                        <img src={fotoGrupal} alt="Alumnos y coaches entrenando en Triumph Fight Center, academia de Muay Thai y Boxeo en Surco" className="hero-photo" width="560" height="680" loading="eager" fetchPriority="high" />
+                        <img src={fotoGrupal} alt="Alumnos y coaches entrenando en Triumph Fight Center, academia de Muay Thai y Boxeo en Surco" className="hero-photo" width="560" height="680" loading="eager" fetchpriority="high" />
                         <span className="hero-frame-tag">EST. SURCO</span>
                     </div>
                 </div>
