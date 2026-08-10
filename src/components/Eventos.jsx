@@ -37,11 +37,11 @@ const Eventos = () => {
     };
 
     return (
-        <section id="eventos" className="events-section">
+        <section id="eventos" className="section section--light events-section">
+            <span className="ghost-text events-ghost-text" aria-hidden="true">FIGHT NIGHT</span>
             <div className="container">
-                <div className="section-header text-center">
-                    <span className="section-badge">Próximos Eventos</span>
-                    <h2>Nuestros Guerreros en Acción</h2>
+                <div className="section-head center">
+                    <h2>Nuestros guerreros en acción</h2>
                     <p>Apoya a nuestra sangre en los próximos eventos nacionales e internacionales.</p>
                 </div>
 
@@ -83,7 +83,9 @@ const Eventos = () => {
                             onClick={() => openModal(imgEstelar)}
                         />
                         <div className="event-desc text-center">
+                            <span className="ticket-category">Muay Thai PRO</span>
                             <h3>O.Medrano VS J.Muñante</h3>
+                            <div className="ticket-seam"><span className="seam-hole seam-left"></span><span className="seam-hole seam-right"></span></div>
                             <ul className="event-details-list">
                                 <li><strong>Categoria:</strong> Muay Thai PRO - Peso Superligero</li>
                                 <li><strong>Fecha y Hora:</strong> Sabado, 06 de Diciembre - 1:00 PM</li>
@@ -103,7 +105,9 @@ const Eventos = () => {
                             onClick={() => openModal(armaskargasImg)}
                         />
                         <div className="event-desc text-center">
+                            <span className="ticket-category">Muay Thai PRO</span>
                             <h3>A.Armas VS K.Vargas</h3>
+                            <div className="ticket-seam"><span className="seam-hole seam-left"></span><span className="seam-hole seam-right"></span></div>
                             <ul className="event-details-list">
                                 <li><strong>Categoria:</strong> Muay Thai PRO - Peso Atrapado</li>
                                 <li><strong>Fecha y Hora:</strong> Sabado, 06 de Diciembre - 1:00 PM</li>
@@ -122,7 +126,9 @@ const Eventos = () => {
                             onClick={() => openModal(liviameyagusukiImg)}
                         />
                         <div className="event-desc text-center">
+                            <span className="ticket-category">Muay Thai PRO</span>
                             <h3>E.Livia VS H.Miyagusuku</h3>
+                            <div className="ticket-seam"><span className="seam-hole seam-left"></span><span className="seam-hole seam-right"></span></div>
                             <ul className="event-details-list">
                                 <li><strong>Categoria:</strong> Muay Thai PRO - Peso Ligero</li>
                                 <li><strong>Fecha y Hora:</strong> Sabado, 23 de Agosto - 3:00 PM</li>
@@ -133,9 +139,8 @@ const Eventos = () => {
                     </article>
                 </div>
 
-                <div className="section-header text-center" style={{ marginTop: '80px' }}>
-                    <span className="section-badge">Comunidad</span>
-                    <h2>Eventos de nuestra Familia</h2>
+                <div className="section-head center events-community">
+                    <h2>Eventos de nuestra familia</h2>
                     <p>En Triumph también somos familia. Únete a nuestras actividades fuera del ring.</p>
                 </div>
 

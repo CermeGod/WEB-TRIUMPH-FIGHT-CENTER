@@ -4,6 +4,7 @@ import teenImage from '../assets/kickboxing-teen-servicio-carrusel.webp';
 import tkdImage from '../assets/taekwondo.webp';
 import muayThaiImg from '../assets/Muay thai .webp';
 import boxeoImg from '../assets/guantes-tirumph.boxeo.webp';
+import kickImg from '../assets/imagen-principal-hero.webp';
 import { useState, useRef } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
@@ -35,17 +36,17 @@ const Classes = () => {
     };
 
     return (
-        <section id="clase" className="classes-section">
+        <section id="clase" className="section section--light classes-section">
             <div className="container">
-                <div className="section-header">
-                    <h2>Nuestras Clases</h2>
-                    <p>Disciplinas diseñadas para forjar tu mente y cuerpo. No importa si eres principiante o avanzado, tenemos tu lugar.</p>
+                <div className="section-head">
+                    <h2>Nuestras disciplinas</h2>
+                    <p>Programas para forjar mente y cuerpo. No importa si eres principiante absoluto o competidor avanzado: aquí tienes tu lugar.</p>
                 </div>
 
                 <div className="classes-grid">
                     <article className="class-card">
+                        <span className="class-number">01</span>
                         <div className="class-img-wrapper">
-                            {/* Placeholder Image using Unsplash */}
                             <img src={muayThaiImg} alt="Clase de Muay Thai en Triumph Fight Center Surco" width="600" height="400" loading="lazy" />
                         </div>
                         <div className="class-info">
@@ -56,8 +57,8 @@ const Classes = () => {
                     </article>
 
                     <article className="class-card">
+                        <span className="class-number">02</span>
                         <div className="class-img-wrapper">
-                            {/* Placeholder Image using Unsplash */}
                             <img src={boxeoImg} alt="Entrenamiento de Boxeo Clásico para adultos en Lima" width="600" height="400" loading="lazy" />
                         </div>
                         <div className="class-info">
@@ -68,8 +69,9 @@ const Classes = () => {
                     </article>
 
                     <article className="class-card">
+                        <span className="class-number">03</span>
                         <div className="class-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800" alt="Sesión de Kickboxing funcional en Triumph Fight Center" width="600" height="400" loading="lazy" />
+                            <img src={kickImg} alt="Competidor de Triumph Fight Center en un evento de kickboxing" width="600" height="400" loading="lazy" />
                         </div>
                         <div className="class-info">
                             <h3>Kickboxing</h3>
@@ -79,9 +81,9 @@ const Classes = () => {
                     </article>
                 </div>
 
-                <div className="section-header eventual-header">
-                    <h2>Cursos Eventuales</h2>
-                    <p>Programas especiales diseñados para los más jóvenes y el público en general.</p>
+                <div className="section-head center eventual-header">
+                    <h2>Cursos eventuales</h2>
+                    <p>Programas especiales para los más jóvenes y el público en general.</p>
                 </div>
 
                 <div className="carousel-controls mobile-only">

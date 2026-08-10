@@ -12,8 +12,8 @@ import WhatsAppBtn from '../components/WhatsAppBtn';
 
 function Home() {
     useEffect(() => {
-        // Find key elements to apply stagger animations
-        const elementsToAnimate = document.querySelectorAll('.class-card, .plan-card, .event-item, .trophy-case, .hall-of-fame, .hero-text-side, .hero-img');
+        // Find key elements to apply stagger animations (el Hero se anima solo)
+        const elementsToAnimate = document.querySelectorAll('.section-head, .class-card, .event-item, .hall-of-fame, .profesor-card');
 
         elementsToAnimate.forEach((el, index) => {
             el.classList.add('animate-reveal');

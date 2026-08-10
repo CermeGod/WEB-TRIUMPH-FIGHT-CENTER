@@ -1,5 +1,5 @@
 import './Gloria.css';
-import { Medal, Trophy, Star, Crown, ChevronRight } from 'lucide-react';
+import { Star, ChevronRight } from 'lucide-react';
 import leonardoImg from '../assets/Campeon.Leonardo Palomino.webp';
 import cameponPalominoImg from '../assets/CAMEPON PALOMINO.webp';
 import katerineImg1 from '../assets/campeona-sudamericanda.webp';
@@ -8,18 +8,19 @@ import katerineImg3 from '../assets/campeona-2dolugar-brasil.webp';
 
 const Gloria = () => {
     return (
-        <section id="gloria" className="trophy-room-section">
+        <section id="gloria" className="section trophy-room-section">
+            <span className="ghost-text gloria-ghost" aria-hidden="true">GLORIA</span>
             <div className="container">
-                <div className="trophy-header text-center">
-                    <span className="section-badge">Nuestra Gloria</span>
-                    <h2>Sala de Campeones</h2>
+                <div className="section-head center trophy-header">
+                    <h2>Sala de campeones</h2>
                     <p className="trophy-subtitle">
-                        El tatami donde se forjan campeones. Conoce nuestros logros y la sangre derramada por obtener la victoria en el circuito nacional.
+                        El tatami donde se forjan guerreros. Estos son nuestros logros y la sangre derramada por la victoria en el circuito nacional.
                     </p>
                 </div>
 
-                <div className="champions-list" style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+                <div className="champions-list">
                     <article className="hall-of-fame">
+                        <span className="rank-ghost ghost-text" aria-hidden="true">01</span>
                         <div className="hof-image-side">
                             <img src={cameponPalominoImg} alt="Campeón Leonardo Palomino entrenando en Triumph Fight Center Surco" className="champion-img" width="500" height="600" loading="lazy" />
                         </div>
@@ -43,7 +44,8 @@ const Gloria = () => {
                         </div>
                     </article>
 
-                    <article className="hall-of-fame">
+                    <article className="hall-of-fame hall-of-fame-reverse">
+                        <span className="rank-ghost ghost-text" aria-hidden="true">02</span>
                         <div className="hof-image-side has-crossfade-3">
                             <img src={katerineImg1} alt="Katerine Vargas Campeona" className="champion-img cf-img cf-img-1" width="500" height="600" loading="lazy" />
                             <img src={katerineImg2} alt="Katerine Vargas Accion" className="champion-img cf-img cf-img-2" width="500" height="600" loading="lazy" />

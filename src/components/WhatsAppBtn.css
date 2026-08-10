@@ -14,19 +14,35 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
-    animation: bounceInit 2s infinite;
+    transition: transform 0.25s ease, background-color 0.25s ease;
 }
 
-@keyframes bounceInit {
+.whatsapp-float::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #25d366;
+    z-index: -1;
+    animation: waPulse 2.4s ease-out infinite;
+}
 
-    0%,
-    100% {
-        transform: translateY(0);
+@keyframes waPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.55;
     }
 
-    50% {
-        transform: translateY(-10px);
+    70%,
+    100% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .whatsapp-float::before {
+        animation: none;
     }
 }
 
@@ -50,8 +66,11 @@
     background-color: var(--bg-secondary);
     color: var(--text-main);
     text-align: center;
-    padding: 5px 10px;
+    padding: 6px 12px;
     border-radius: 6px;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     border: 1px solid var(--border-color);
     position: absolute;
     z-index: 1;
