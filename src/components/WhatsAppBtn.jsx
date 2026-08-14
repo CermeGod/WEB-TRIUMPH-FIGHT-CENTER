@@ -1,13 +1,15 @@
 import './WhatsAppBtn.css';
+import { waLink, trackContact } from '../lib/track';
 
 const WhatsAppBtn = () => {
     return (
         <a
-            href="https://wa.me/51900966701"
+            href={waLink('Hola, quiero información sobre Triumph Fight Center 🥊')}
             className="whatsapp-float"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Contactar por WhatsApp"
+            onClick={() => trackContact('boton_flotante')}
         >
             <span className="tooltip-text">¡Escríbenos!</span>
             <svg viewBox="0 0 32 32" className="whatsapp-icon" xmlns="http://www.w3.org/2000/svg">

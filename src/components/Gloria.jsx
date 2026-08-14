@@ -1,5 +1,6 @@
 import './Gloria.css';
 import { Star, ChevronRight } from 'lucide-react';
+import { waLink, track } from '../lib/track';
 import leonardoImg from '../assets/Campeon.Leonardo Palomino.webp';
 import cameponPalominoImg from '../assets/CAMEPON PALOMINO.webp';
 import katerineImg1 from '../assets/campeona-sudamericanda.webp';
@@ -38,7 +39,7 @@ const Gloria = () => {
                             <p className="quote gloria-quote">
                                 "El dolor es temporal, el orgullo es para siempre."
                             </p>
-                            <a href="https://wa.me/51900966701" target="_blank" rel="noopener noreferrer" className="champion-link">
+                            <a href={waLink('Hola, quiero entrenar como Leonardo Palomino en Triumph Fight Center 🥊')} target="_blank" rel="noopener noreferrer" className="champion-link" onClick={() => track('Lead', { content_name: 'campeon_leonardo', content_category: 'campeones' })}>
                                 Sé como Leonardo <ChevronRight size={16} />
                             </a>
                         </div>
@@ -65,7 +66,7 @@ const Gloria = () => {
                             <p className="quote gloria-quote">
                                 "La mejor defensa es el ataque."
                             </p>
-                            <a href="https://wa.me/51900966701" target="_blank" rel="noopener noreferrer" className="champion-link">
+                            <a href={waLink('Hola, quiero entrenar como Katerine Vargas en Triumph Fight Center 🥊')} target="_blank" rel="noopener noreferrer" className="champion-link" onClick={() => track('Lead', { content_name: 'campeona_katerine', content_category: 'campeones' })}>
                                 Sé como Katerine <ChevronRight size={16} />
                             </a>
                         </div>

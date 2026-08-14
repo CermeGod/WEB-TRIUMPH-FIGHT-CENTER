@@ -1,6 +1,7 @@
 import './Footer.css';
 import { Instagram, Facebook, MapPin, Phone } from 'lucide-react';
 import logo from '../assets/Superlogo.webp';
+import { waLink, trackLead, trackContact } from '../lib/track';
 
 const Footer = () => {
     return (
@@ -11,7 +12,7 @@ const Footer = () => {
                         <img src={logo} alt="Triumph Fight Center" className="footer-logo-img" width="200" height="70" loading="lazy" />
                     </a>
                     <p className="footer-tagline">Muay Thai · Boxeo · Kickboxing en Surco, Lima.</p>
-                    <a href="https://wa.me/51900966701" target="_blank" rel="noopener noreferrer" className="btn-primary footer-cta">
+                    <a href={waLink('Hola, quiero reservar mi PRIMERA CLASE GRATIS en Triumph Fight Center 🥊')} target="_blank" rel="noopener noreferrer" className="btn-primary footer-cta" onClick={() => trackLead('footer')}>
                         Primera clase gratis
                     </a>
                 </div>
@@ -27,7 +28,7 @@ const Footer = () => {
                     </div>
                     <div className="contact-item">
                         <Phone size={22} className="icon" />
-                        <p><a href="tel:+51900966701">900 966 701</a></p>
+                        <p><a href="tel:+51900966701" onClick={() => trackContact('footer_tel')}>900 966 701</a></p>
                     </div>
                     <div className="footer-social">
                         <a href="https://www.instagram.com/triumphfightcenter.peru/?hl=es" target="_blank" rel="noopener noreferrer" aria-label="Instagram">

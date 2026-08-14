@@ -1,6 +1,20 @@
 import './Eventos.css';
 import { useState, useRef } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { waLink, track } from '../lib/track';
+
+// CTA de entradas: manda a WhatsApp con la pelea + dispara 'Lead'
+const TicketCta = ({ pelea }) => (
+    <a
+        href={waLink(`Hola, quiero separar mi entrada para la pelea ${pelea} 🎟️`)}
+        target="_blank" rel="noopener noreferrer"
+        className="btn-outline"
+        style={{ marginTop: '15px' }}
+        onClick={() => track('Lead', { content_name: pelea, content_category: 'entradas' })}
+    >
+        Comprar Entradas Aquí
+    </a>
+);
 import imgEstelar from '../assets/evento-pelea-estelar.webp';
 import imgEntrada from '../assets/evento-separada-entrada-peru.webp';
 import armaskargasImg from '../assets/pelea-evento-A.Armas vs K.Vargas.webp';
@@ -91,7 +105,7 @@ const Eventos = () => {
                                 <li><strong>Fecha y Hora:</strong> Sabado, 06 de Diciembre - 1:00 PM</li>
                                 <li><strong>Lugar:</strong> TRUCK PARK. Portocarrero 344, Surquillo.</li>
                             </ul>
-                            <a href="#" className="btn-outline" style={{ marginTop: '15px' }}>Comprar Entradas Aquí</a>
+                            <TicketCta pelea="O.Medrano vs J.Muñante" />
                         </div>
                     </article>
 
@@ -113,7 +127,7 @@ const Eventos = () => {
                                 <li><strong>Fecha y Hora:</strong> Sabado, 06 de Diciembre - 1:00 PM</li>
                                 <li><strong>Lugar:</strong> TRUCK PARK. Portocarrero 344, Surquillo.</li>
                             </ul>
-                            <a href="#" className="btn-outline" style={{ marginTop: '15px' }}>Comprar Entradas Aquí</a>
+                            <TicketCta pelea="A.Armas vs K.Vargas" />
                         </div>
                     </article>
                     <article className="event-item">
@@ -134,7 +148,7 @@ const Eventos = () => {
                                 <li><strong>Fecha y Hora:</strong> Sabado, 23 de Agosto - 3:00 PM</li>
                                 <li><strong>Lugar:</strong> TRUCK PARK. Portocarrero 344, Surquillo.</li>
                             </ul>
-                            <a href="#" className="btn-outline" style={{ marginTop: '15px' }}>Comprar Entradas Aquí</a>
+                            <TicketCta pelea="E.Livia vs H.Miyagusuku" />
                         </div>
                     </article>
                 </div>
