@@ -47,12 +47,9 @@
 }
 
 .whatsapp-icon {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     fill: #FFF;
-    overflow: visible;
-    padding-bottom: 2px;
-    padding-right: 1px;
 }
 
 .whatsapp-float:hover {
