@@ -56,12 +56,12 @@
     --z-grain: 9000;
 
     /* --- TIPOGRAFÍA --- */
-    --h1: clamp(52px, 9vw, 128px);
-    --h2: clamp(36px, 5.5vw, 66px);
+    --h1: clamp(60px, 10.5vw, 168px);
+    --h2: clamp(40px, 6vw, 82px);
     --h3: clamp(22px, 2.4vw, 30px);
     --text: 17px;
-    --font-display: 'Anton', 'Kanit', sans-serif;
-    --font-heading: 'Kanit', sans-serif;
+    --font-display: 'Bebas Neue', 'Oswald', sans-serif;
+    --font-heading: 'Oswald', system-ui, sans-serif;
     --font-body: 'Inter', system-ui, sans-serif;
 
     --grain-opacity: 0.045;
@@ -154,8 +154,8 @@ h1 {
     font-family: var(--font-display);
     font-size: var(--h1);
     font-weight: 400;
-    letter-spacing: -0.5px;
-    line-height: 0.92;
+    letter-spacing: 0.5px;
+    line-height: 0.86;
     text-transform: uppercase;
 }
 
@@ -163,16 +163,18 @@ h2 {
     font-family: var(--font-display);
     font-size: var(--h2);
     font-weight: 400;
-    line-height: 0.98;
+    line-height: 0.9;
     text-transform: uppercase;
-    letter-spacing: -0.3px;
+    letter-spacing: 0.6px;
 }
 
 h3 {
+    font-family: var(--font-heading);
     font-size: var(--h3);
     font-weight: 600;
-    line-height: 1.15;
-    letter-spacing: 0.2px;
+    line-height: 1.12;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
 }
 
 p {

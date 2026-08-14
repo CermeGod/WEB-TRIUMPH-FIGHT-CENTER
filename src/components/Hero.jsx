@@ -2,26 +2,39 @@ import './Hero.css';
 import { MapPin, Clock, Swords, Flame, Instagram, Facebook } from 'lucide-react';
 import heroBanner from '../assets/imagen-banner-hero.webp';
 import fotoGrupal from '../assets/foto-grupal-3.webp';
+import { waLink, track, trackLead } from '../lib/track';
 
 const Hero = () => {
     return (
         <section className="hero">
             <img src={heroBanner} alt="" aria-hidden="true" className="hero-bg" loading="eager" decoding="async" fetchpriority="high" />
             <div className="hero-scrim" aria-hidden="true"></div>
+
+            {/* Acentos gráficos generados (no son fotos): líneas de velocidad + grid */}
+            <div className="hero-fx" aria-hidden="true">
+                <div className="hero-fx-streaks"></div>
+                <div className="hero-fx-grid"></div>
+                <div className="hero-fx-glow"></div>
+            </div>
+
             <span className="ghost-text hero-ghost" aria-hidden="true">TRIUMPH</span>
 
             <div className="container hero-grid">
                 <div className="hero-copy">
-                    <span className="kicker hero-kicker">Triumph Fight Center · Surco, Lima</span>
+                    <span className="hero-kicker">
+                        <span className="hero-kicker-dot"></span>
+                        Muay Thai · Boxeo · Kickboxing — Surco, Lima
+                    </span>
 
                     <h1 className="hero-title">
-                        Aquí se forjan<br />
+                        Aquí se forjan
                         <span className="hero-title-accent">campeones</span>
                     </h1>
 
                     <p className="hero-sub">
-                        Especialistas en <strong>Muay Thai</strong>, <strong>Boxeo</strong> y <strong>Kickboxing</strong>.
-                        También <strong>Kickboxing</strong> y <strong>Muay Thai Teens</strong>.
+                        Entrena con quienes compiten. Programas de <strong>Muay Thai</strong>,
+                        <strong> Boxeo</strong> y <strong>Kickboxing</strong> para adultos y teens —
+                        desde cero hasta el ring.
                     </p>
 
                     <div className="hero-chips">
@@ -30,10 +43,21 @@ const Hero = () => {
                     </div>
 
                     <div className="hero-actions">
-                        <a href="https://wa.me/51900966701" target="_blank" rel="noopener noreferrer" className="btn-primary">
+                        <a
+                            href={waLink('Hola, quiero reservar mi PRIMERA CLASE GRATIS en Triumph Fight Center 🥊')}
+                            target="_blank" rel="noopener noreferrer"
+                            className="btn-primary"
+                            onClick={() => trackLead('hero')}
+                        >
                             Primera clase gratis
                         </a>
-                        <a href="#clase" className="btn-outline">Ver disciplinas</a>
+                        <a
+                            href="#clase"
+                            className="btn-outline"
+                            onClick={() => track('ViewContent', { content_name: 'disciplinas', content_category: 'hero' })}
+                        >
+                            Ver disciplinas
+                        </a>
                     </div>
 
                     <div className="hero-stats">
@@ -70,6 +94,8 @@ const Hero = () => {
 
                 <div className="hero-visual">
                     <div className="hero-frame">
+                        <span className="hero-bracket hero-bracket--tl" aria-hidden="true"></span>
+                        <span className="hero-bracket hero-bracket--br" aria-hidden="true"></span>
                         <img src={fotoGrupal} alt="Alumnos y coaches entrenando en Triumph Fight Center, academia de Muay Thai y Boxeo en Surco" className="hero-photo" width="560" height="680" loading="eager" fetchpriority="high" />
                         <span className="hero-frame-tag">EST. SURCO</span>
                     </div>

@@ -2,6 +2,9 @@ import './Header.css';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import logo from '../assets/Superlogo.webp';
+import { waLink, trackLead } from '../lib/track';
+
+const CTA_MSG = 'Hola, quiero reservar mi PRIMERA CLASE GRATIS en Triumph Fight Center 🥊';
 
 const LINKS = [
     { href: '#clase', label: 'Clases' },
@@ -41,7 +44,7 @@ const Header = () => {
                 </nav>
 
                 <div className="header-cta">
-                    <a href="https://wa.me/51900966701" target="_blank" rel="noopener noreferrer" className="btn-primary">
+                    <a href={waLink(CTA_MSG)} target="_blank" rel="noopener noreferrer" className="btn-primary" onClick={() => trackLead('header')}>
                         Clase gratis
                     </a>
                 </div>
@@ -67,11 +70,11 @@ const Header = () => {
                     ))}
                 </nav>
                 <a
-                    href="https://wa.me/51900966701"
+                    href={waLink(CTA_MSG)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary nav-mobile-cta"
-                    onClick={() => setOpen(false)}
+                    onClick={() => { trackLead('nav_movil'); setOpen(false); }}
                 >
                     Primera clase gratis
                 </a>

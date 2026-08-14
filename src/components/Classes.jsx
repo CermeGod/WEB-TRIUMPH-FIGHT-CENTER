@@ -7,6 +7,19 @@ import boxeoImg from '../assets/guantes-tirumph.boxeo.webp';
 import kickImg from '../assets/imagen-principal-hero.webp';
 import { useState, useRef } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { waLink, track } from '../lib/track';
+
+// CTA reutilizable de cada disciplina: dispara 'Lead' con el nombre de la clase
+const ClassCta = ({ clase }) => (
+    <a
+        href={waLink(`Hola, quiero información sobre las clases de ${clase} en Triumph Fight Center 🥊`)}
+        target="_blank" rel="noopener noreferrer"
+        className="class-link"
+        onClick={() => track('Lead', { content_name: clase, content_category: 'clase' })}
+    >
+        Infórmate Ahora &rarr;
+    </a>
+);
 
 const Classes = () => {
     const [modalImage, setModalImage] = useState(null);
@@ -52,7 +65,7 @@ const Classes = () => {
                         <div className="class-info">
                             <h3>Muay Thai</h3>
                             <p>El arte de las ocho extremidades. Aprende la técnica más letal de striking tailandés con nuestros campeones.</p>
-                            <a href="https://wa.me/51900966701" target="_blank" rel="noopener noreferrer" className="class-link">Infórmate Ahora &rarr;</a>
+                            <ClassCta clase="Muay Thai" />
                         </div>
                     </article>
 
@@ -64,7 +77,7 @@ const Classes = () => {
                         <div className="class-info">
                             <h3>Boxeo Clásico</h3>
                             <p>Técnica, resistencia y poder. Domina el cuadrilátero con un entrenamiento enfocado en la velocidad y el movimiento de pies.</p>
-                            <a href="https://wa.me/51900966701" target="_blank" rel="noopener noreferrer" className="class-link">Infórmate Ahora &rarr;</a>
+                            <ClassCta clase="Boxeo Clásico" />
                         </div>
                     </article>
 
@@ -76,7 +89,7 @@ const Classes = () => {
                         <div className="class-info">
                             <h3>Kickboxing</h3>
                             <p>Combina el poder de los puños y las patadas. Mejora tu agilidad y resistencia en entrenamientos de alta intensidad.</p>
-                            <a href="https://wa.me/51900966701" target="_blank" rel="noopener noreferrer" className="class-link">Infórmate Ahora &rarr;</a>
+                            <ClassCta clase="Kickboxing" />
                         </div>
                     </article>
                 </div>
@@ -99,7 +112,7 @@ const Classes = () => {
                         <div className="class-info">
                             <h3>Kickboxing Teens</h3>
                             <p>Disciplina, respeto y flexibilidad. Una excelente base marcial para el desarrollo físico y mental de los niños.</p>
-                            <a href="https://wa.me/51900966701" target="_blank" rel="noopener noreferrer" className="class-link">Infórmate Ahora &rarr;</a>
+                            <ClassCta clase="Kickboxing Teens" />
                         </div>
                     </article>
 
@@ -110,7 +123,7 @@ const Classes = () => {
                         <div className="class-info">
                             <h3>Capoeira Kids</h3>
                             <p>Música, acrobacia y artes marciales. Desarrollo de la coordinación y el ritmo en un ambiente lleno de energía.</p>
-                            <a href="https://wa.me/51900966701" target="_blank" rel="noopener noreferrer" className="class-link">Infórmate Ahora &rarr;</a>
+                            <ClassCta clase="Capoeira Kids" />
                         </div>
                     </article>
 
@@ -121,7 +134,7 @@ const Classes = () => {
                         <div className="class-info">
                             <h3>Taekwondo</h3>
                             <p>El camino de los pies y manos. Desarrolla velocidad asombrosa, flexibilidad y autocontrol con nuestras clases dinámicas.</p>
-                            <a href="https://wa.me/51900966701" target="_blank" rel="noopener noreferrer" className="class-link">Infórmate Ahora &rarr;</a>
+                            <ClassCta clase="Taekwondo" />
                         </div>
                     </article>
                 </div>
