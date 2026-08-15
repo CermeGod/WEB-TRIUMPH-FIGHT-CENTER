@@ -54,14 +54,17 @@
 
 .event-img {
     width: 100%;
+    height: auto;
     aspect-ratio: 3 / 4;
     object-fit: cover;
+    object-position: center top;
     border-radius: 0;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .confort-item .event-img {
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 16 / 10;
+    object-position: center;
 }
 
 .event-item:hover .event-img {
@@ -169,11 +172,15 @@
         grid-template-columns: none;
         flex-wrap: nowrap;
         overflow-x: auto;
+        overflow-y: hidden;
         scroll-snap-type: x mandatory;
+        scroll-padding-left: 0;
         gap: 16px;
-        padding-bottom: 14px;
+        padding-bottom: 16px;
         scrollbar-width: none;
         max-width: none;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
     }
 
     .events-grid::-webkit-scrollbar {
@@ -181,7 +188,13 @@
     }
 
     .event-item {
-        scroll-snap-align: center;
-        flex: 0 0 84%;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        flex: 0 0 86%;
+    }
+
+    /* La comunidad (2 fotos anchas) también como carrusel de una en una */
+    .events-grid:has(.confort-item) .confort-item {
+        flex: 0 0 86%;
     }
 }

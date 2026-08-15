@@ -189,9 +189,13 @@
     .kids-grid {
         display: flex;
         overflow-x: auto;
+        overflow-y: hidden;
         gap: 16px;
-        padding-bottom: 8px;
+        padding-bottom: 16px;
         scrollbar-width: none;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
     }
 
     .kids-grid::-webkit-scrollbar {
@@ -199,6 +203,17 @@
     }
 
     .kids-grid .class-card {
-        flex: 0 0 82%;
+        flex: 0 0 86%;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
+    /* Los flyers de kids son verticales: aspecto vertical para no cortarlos */
+    .kids-grid .class-img-wrapper {
+        aspect-ratio: 3 / 4;
+    }
+
+    .kids-grid .class-img-wrapper img {
+        object-position: center top;
     }
 }

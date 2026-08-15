@@ -31,7 +31,9 @@ const Classes = () => {
     const scrollGrid = (dir) => {
         if (!kidsGridRef.current) return;
         const { scrollLeft, scrollWidth, clientWidth } = kidsGridRef.current;
-        const scrollAmount = 350;
+        const first = kidsGridRef.current.querySelector('.class-card');
+        const gap = parseFloat(getComputedStyle(kidsGridRef.current).gap) || 16;
+        const scrollAmount = first ? first.getBoundingClientRect().width + gap : 350;
 
         if (dir === 'left') {
             if (scrollLeft <= 0) {

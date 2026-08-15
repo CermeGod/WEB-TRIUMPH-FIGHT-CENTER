@@ -33,7 +33,9 @@ const Eventos = () => {
     const scrollGrid = (ref, dir) => {
         if (!ref.current) return;
         const { scrollLeft, scrollWidth, clientWidth } = ref.current;
-        const scrollAmount = 350;
+        const first = ref.current.querySelector('.event-item');
+        const gap = parseFloat(getComputedStyle(ref.current).gap) || 16;
+        const scrollAmount = first ? first.getBoundingClientRect().width + gap : 350;
 
         if (dir === 'left') {
             if (scrollLeft <= 0) {
